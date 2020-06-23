@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+@font-face {
+  font-family: fonteZelda;
+  src: url('imagens/assets/fonteTelaInicial.otf');
+} 
+
+main {
+  background-image: url('imagens/assets/telaInicial.png');
+  background-repeat: no-repeat;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: fonteZelda;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 70px;
+}
+
+img {
+  width: 400px;
+  position: absolute;
+  top: 150px;
+  left: 180px;
+}
+
+p {
+  text-align: center;
+  width: 500px;
+  font-size: 25px;
+  margin-top: 60px;
+  margin-left: 650px;
+}
+
+a {
+  text-align: center;
+  font-size: 42px;
+  margin: 0;
+  margin-top: 80px;
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  font-size: 47px;
+  text-shadow: 2px 2px 10px  #ffffff;
+}
