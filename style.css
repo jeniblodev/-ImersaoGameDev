@@ -24,6 +24,7 @@ h1 {
   margin: 0;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 20px;
   font-size: 70px;
 }
 
@@ -38,12 +39,11 @@ p {
   text-align: center;
   width: 500px;
   font-size: 25px;
-  margin-top: 60px;
   margin-left: 650px;
 }
 
 h3 {
-  margin-top: 69px;
+  margin-top: 65px;
 }
 
 a {
