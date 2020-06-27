@@ -31,7 +31,7 @@ class Pontuacao {
     }
 
     adicionarPonto() {
-        this.pontos += 0.4;
+        this.pontos += 0.8;
         somLamp.play();
         
             
