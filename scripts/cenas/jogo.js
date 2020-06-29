@@ -6,12 +6,13 @@ class Jogo {
     setup() {
         cenario = new Cenario([imagemCenario_1, imagemCenario_2, imagemCenario_3, imagemCenario_4, imagemCenario_5], 3);
         pontuacao = new Pontuacao();
-        vida = new Vida(5, 5);
+        vida = new Vida(3, 3);
         personagem = new Personagem(matrizPersonagem, imagemPersonagem, 150, 276, 170, 207, 220, 270);
         inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 70, 82, 82, 108, 108, 12, 200);
         inimigoTroll = new Inimigo(matrizInimigoTroll, imagemInimigoTroll, 2*width, 30, 260, 260, 400, 400, 12, 2500);
         inimigoVoador = new Inimigo(matrizInimigoVoador, imagemInimigoVoador, width - 52, 300, 92, 92, 180, 150, 12, 3000);
         lampada = new Pontos(matrizLampada, imagemLampada, width - 52, 320, 120, 120, 400, 400, 10, 100);
+        elixir = new Pontos(matrizElixir, imagemElixir, width - 52, 480, 50, 55, 360, 399, 7, 7000);
     }
 
     keyPressed(key) {
@@ -40,6 +41,9 @@ class Jogo {
         lampada.exibe();
         lampada.move();
 
+        elixir.exibe();
+        elixir.move();
+
         inimigo.exibe();
         inimigo.move();
         inimigoTroll.exibe();
@@ -55,6 +59,7 @@ class Jogo {
             personagem.ficaInvencivel();
             
             if(vida.vidas === 0) {
+                somPerdeVida.stop();
                 somJogo.stop();
                 somGameOver.play();
                 image(imagemGameOver, 400, 300, 600, 113);
@@ -67,6 +72,7 @@ class Jogo {
             personagem.ficaInvencivel();
             
             if(vida.vidas === 0) {
+                somPerdeVida.stop();
                 somJogo.stop();
                 somGameOver.play();
                 image(imagemGameOver, 400, 300, 600, 113);
@@ -79,11 +85,18 @@ class Jogo {
             personagem.ficaInvencivel();
             
             if(vida.vidas === 0) {
+                somPerdeVida.stop();
                 somJogo.stop();
                 somGameOver.play();
                 image(imagemGameOver, 400, 300, 600, 113);
                 noLoop();
             }
+        }
+
+        if(personagem.estaColidindo(elixir)) {
+            vida.ganhaVida();
+            somElixir.play();
+            
         }
 
         if(personagem.marcaPonto(lampada)) {

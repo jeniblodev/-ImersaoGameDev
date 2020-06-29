@@ -14,6 +14,7 @@ let imagemInimigoTroll;
 let imagemInimigoVoador;
 let imagemGameOver;
 let imagemVida;
+let imagemElixir;
 let fonte;
 
 let cenas;
@@ -29,6 +30,7 @@ let somLamp;
 let somPerdeVida;
 let somVitoria;
 let somGameOver;
+let somElixir;
 let personagem;
 let inimigo;
 let inimigoTroll;
@@ -36,6 +38,7 @@ let inimigoVoador;
 let lampada;
 let pontuacao;
 let vida;
+let elixir;
 
 let cenaAtual = 'telaInicial';
 
@@ -154,4 +157,8 @@ const matrizInimigoVoador = [
   [200, 600],
   [400, 600],
   [0, 750],
+]
+
+const matrizElixir = [
+  [121,42]
 ]

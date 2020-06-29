@@ -19,6 +19,12 @@ class Vida {
         
     }
 
+    ganhaVida() {
+        if(this.vidas < this.total) {
+            this.vidas++
+        }
+    }
+
     perdeVida() {
         this.vidas--
         somPerdeVida.play();

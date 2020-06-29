@@ -42,6 +42,7 @@ class TelaInicial {
         text('ajude a hispta a coletar o maior numero de', 700, 410);
         text('pontos de sabedoria iluminados pela floresta e tenha', 655, 440);
         text('muito cuidado com os trolls e suas gotinhas envenenadas!', 640, 470);
+        text('-aproveite as doses de elixir para recuperar sua vida-', 655, 500);
         
     }
 

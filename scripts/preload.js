@@ -5,6 +5,7 @@ function preload() {
     imagemTrollDead = loadImage('imagens/inimigos/trollDead.png');
     imagemTrofeu = loadImage('imagens/assets/trofeu.png')
     imagemVida = loadImage('imagens/assets/coracao.png');
+    imagemElixir = loadImage('imagens/assets/elixir.png');
     fonte = loadFont('imagens/assets/fonteTelaInicial.otf');
 
     imagemCenario_1 = loadImage('imagens/cenario/bg01.png');
@@ -21,6 +22,7 @@ function preload() {
     somJogo = loadSound('sons/trilha_jogo.mp3');
     somPulo = loadSound('sons/somPulo.mp3');
     somLamp = loadSound('sons/coin.mp3');
+    somElixir = loadSound('sons/som_elixir.mp3');
     somPerdeVida = loadSound('sons/perde_vida.mp3');
     somVitoria = loadSound('sons/win.mp3');
     somGameOver = loadSound('sons/game_over.mp3');
