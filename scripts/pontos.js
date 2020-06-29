@@ -34,7 +34,7 @@ class Pontuacao {
         this.pontos += 0.8;
         somLamp.play();   
         
-        if(this.pontos >= 200) {
+        if(this.pontos >= 100) {
             somJogo.stop();
             cenaAtual = 'telaFinal';
             somVitoria.play();
