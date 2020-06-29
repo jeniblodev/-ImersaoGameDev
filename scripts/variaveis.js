@@ -1,3 +1,5 @@
+let imagemTrollDead;
+let imagemTrofeu;
 let imagemTelaInicial;
 let imagemInicio;
 let imagemCenario_1;
@@ -14,10 +16,9 @@ let imagemGameOver;
 let imagemVida;
 let fonte;
 
-
-
 let cenas;
 let telaInicial;
+let telaFinal;
 let jogo;
 let botao;
 
@@ -25,6 +26,8 @@ let cenario;
 let somJogo;
 let somPulo;
 let somLamp;
+let somPerdeVida;
+let somVitoria;
 let somGameOver;
 let personagem;
 let inimigo;

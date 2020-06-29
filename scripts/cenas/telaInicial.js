@@ -11,6 +11,7 @@ class TelaInicial {
         this._texto();
         this._botao();
         this._comoJogar();
+        this._criado();
     }
 
     _imagemFundo() {
@@ -50,6 +51,12 @@ class TelaInicial {
         text('como jogar', 1000, 550);
         text('aperte w para pular', 1000, 580);
         text('aperte x para silenciar a musica de fundo', 1000, 600);
+    }
+
+    _criado() {
+        textFont(fonte);
+        textSize(25);
+        text('jogo criado durante a #imersaogamedev da alura', 450, 650);
     }
 
     _botao() {

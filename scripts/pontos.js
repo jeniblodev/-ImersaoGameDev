@@ -32,11 +32,17 @@ class Pontuacao {
 
     adicionarPonto() {
         this.pontos += 0.8;
-        somLamp.play();
+        somLamp.play();   
         
+        if(this.pontos >= 10) {
+            somJogo.stop();
+            cenaAtual = 'telaFinal';
+            somVitoria.play();
             
+            
+        }
     }
-
    
-  
+    
 }
+

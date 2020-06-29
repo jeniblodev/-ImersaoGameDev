@@ -1,7 +1,9 @@
 function preload() {
     somJogo = loadSound('sons/trilha_jogo.mp3');
     imagemTelaInicial = loadImage('imagens/assets/telaInicial.png');
-    imagemInicio = loadImage('imagens/personagem/gigHipsta.gif')
+    imagemInicio = loadImage('imagens/personagem/gigHipsta.gif');
+    imagemTrollDead = loadImage('imagens/inimigos/trollDead.png');
+    imagemTrofeu = loadImage('imagens/assets/trofeu.png')
     imagemVida = loadImage('imagens/assets/coracao.png');
     fonte = loadFont('imagens/assets/fonteTelaInicial.otf');
 
@@ -19,5 +21,7 @@ function preload() {
     somJogo = loadSound('sons/trilha_jogo.mp3');
     somPulo = loadSound('sons/somPulo.mp3');
     somLamp = loadSound('sons/coin.mp3');
+    somPerdeVida = loadSound('sons/perde_vida.mp3');
+    somVitoria = loadSound('sons/win.mp3');
     somGameOver = loadSound('sons/game_over.mp3');
   }

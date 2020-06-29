@@ -6,7 +6,7 @@ class Jogo {
     setup() {
         cenario = new Cenario([imagemCenario_1, imagemCenario_2, imagemCenario_3, imagemCenario_4, imagemCenario_5], 3);
         pontuacao = new Pontuacao();
-        vida = new Vida(3, 3);
+        vida = new Vida(5, 5);
         personagem = new Personagem(matrizPersonagem, imagemPersonagem, 150, 276, 170, 207, 220, 270);
         inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 70, 82, 82, 108, 108, 12, 200);
         inimigoTroll = new Inimigo(matrizInimigoTroll, imagemInimigoTroll, 2*width, 30, 260, 260, 400, 400, 12, 2500);
@@ -51,28 +51,39 @@ class Jogo {
         cenario.exibeGrama();
 
         if(personagem.estaColidindo(inimigo)) {
-            console.log('colidiu');
-            somJogo.stop();
-            somGameOver.play();
-            image(imagemGameOver, 400, 300, 600, 113);
-            noLoop();
-    
+            vida.perdeVida();
+            personagem.ficaInvencivel();
+            
+            if(vida.vidas === 0) {
+                somJogo.stop();
+                somGameOver.play();
+                image(imagemGameOver, 400, 300, 600, 113);
+                noLoop();
+            }
         }
   
         if(personagem.estaColidindo(inimigoTroll)) {
-            console.log('colidiu');
-            somJogo.stop();
-            somGameOver.play();
-            image(imagemGameOver, 400, 300, 600, 113);
-            noLoop();
+            vida.perdeVida();
+            personagem.ficaInvencivel();
+            
+            if(vida.vidas === 0) {
+                somJogo.stop();
+                somGameOver.play();
+                image(imagemGameOver, 400, 300, 600, 113);
+                noLoop();
+            }
         }
 
         if(personagem.estaColidindo(inimigoVoador)) {
-            console.log('colidiu');
-            somJogo.stop();
-            somGameOver.play();
-            image(imagemGameOver, 400, 300, 600, 113);
-            noLoop();
+            vida.perdeVida();
+            personagem.ficaInvencivel();
+            
+            if(vida.vidas === 0) {
+                somJogo.stop();
+                somGameOver.play();
+                image(imagemGameOver, 400, 300, 600, 113);
+                noLoop();
+            }
         }
 
         if(personagem.marcaPonto(lampada)) {
@@ -81,5 +92,7 @@ class Jogo {
         }
 
         
+
     }
+
 }

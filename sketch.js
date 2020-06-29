@@ -3,11 +3,14 @@ function setup() {
   frameRate(40); 
   jogo = new Jogo();
   telaInicial = new TelaInicial;
+  telaFinal = new TelaFinal;
   jogo.setup();
   botao = new Botao('iniciar aventura', width / 2, height / 2);
   cenas = {
     jogo,
-    telaInicial
+    telaInicial,
+    telaFinal
+    
     
   };
   
