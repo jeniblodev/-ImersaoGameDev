@@ -18,21 +18,22 @@ class TelaFinal {
     }
 
     _imagemInicio() {
-        image(imagemTrollDead, 350, -180);
+        image(imagemTrollDead, windowWidth/3, -120);
     }
 
     _titulo() {
         textFont(fonte);
         textSize(60);
-        text('o troll foi derrotado!!', 900, 450);
-        text('voce venceu', 770, 560);
+        fill(0, 0, 0);
+        text('o troll foi derrotado!!', windowWidth/1.52, windowHeight/1.5);
+        text('voce venceu', windowWidth/1.7, windowHeight/1.2);
         
     }
 
     _criado() {
         textFont(fonte);
         textSize(25);
-        text('jogo criado durante a #imersaogamedev da alura', 880, 650);
+        text('jogo criado durante a #imersaogamedev da alura', windowWidth-20, windowHeight-10);
     }
 
 }

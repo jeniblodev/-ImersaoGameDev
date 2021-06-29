@@ -75,7 +75,7 @@ class Jogo {
                 somPerdeVida.stop();
                 somJogo.stop();
                 somGameOver.play();
-                image(imagemGameOver, 400, 300, 600, 113);
+                image(imagemGameOver, windowWidth/3.5, 330, 650, 113);
                 noLoop();
             }
         }
@@ -88,7 +88,7 @@ class Jogo {
                 somPerdeVida.stop();
                 somJogo.stop();
                 somGameOver.play();
-                image(imagemGameOver, 400, 300, 600, 113);
+                image(imagemGameOver, windowWidth/3.5, 330, 650, 113);
                 noLoop();
             }
         }
