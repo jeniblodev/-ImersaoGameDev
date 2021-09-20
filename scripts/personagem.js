@@ -13,6 +13,9 @@ class Personagem extends Animacao {
       this.qntPulos = 2;
 
       this.invencivel = false;
+      this.estadoPiscando = 1;
+      this.piscando = false;
+
     }
   
    pula() {
@@ -47,15 +50,29 @@ class Personagem extends Animacao {
     this.invertida = false;
    }
 
+   exibe() {
+    if(this.piscando) {
+      this.estadoPiscando += 1;
+      if(this.estadoPiscando >= 3) {
+        this.estadoPiscando = 1;
+        return;
+      }
+    }
+    super.exibe();
+   }
+
    ficaInvencivel() {
-      this.invencivel = true
+      this.invencivel = true;
+      this.piscando = true;
       setTimeout(() => {
-        this.invencivel = false}, 1000)
+        this.invencivel = false;
+        this.piscando = false;
+    }, 1000)
   }
 
    estaColidindo(inimigo) {
       if(this.invencivel) {
-        return false
+        return false;
       }
 
     const precisao = .6;
@@ -67,8 +84,7 @@ class Personagem extends Animacao {
       inimigo.x, 
       inimigo.y,
       inimigo.largura*precisao, 
-      inimigo.altura*precisao,
-      
+      inimigo.altura*precisao,      
     );
 
     return colisao;
