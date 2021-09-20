@@ -65,7 +65,10 @@ class Jogo {
             somPerdeVida.stop();
             somJogo.stop();
             somGameOver.play();
-            image(imagemGameOver, windowWidth / 3.5, 330, 650, 113);
+            push();
+            imageMode(CENTER);
+            image(imagemGameOver, windowWidth / 2, windowHeight / 2, 650, 113);
+            pop();
             noLoop();
         }
 
@@ -81,7 +84,7 @@ class Jogo {
         if(vida.vidas <= 0) {
             return;
         }
-        
+
         cenario.exibe();
         pontuacao.exibe();
         vida.draw();
