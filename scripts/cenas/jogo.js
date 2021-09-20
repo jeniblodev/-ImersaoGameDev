@@ -21,7 +21,7 @@ class Jogo {
         }
 
         if(key === 'x') {
-            somJogo.stop();
+            ligaDesligaSom();
         }
 
     }
