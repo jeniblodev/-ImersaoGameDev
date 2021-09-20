@@ -46,44 +46,27 @@ class Jogo {
             lampada.reinicializa();
         }
 
-        
         if(personagem.estaColidindo(inimigo)) {
             vida.perdeVida();
             personagem.ficaInvencivel();
-            
-            if(vida.vidas === 0) {
-                somPerdeVida.stop();
-                somJogo.stop();
-                somGameOver.play();
-                image(imagemGameOver, 400, 300, 600, 113);
-                noLoop();
-            }
         }
   
         if(personagem.estaColidindo(inimigoTroll)) {
             vida.perdeVida();
             personagem.ficaInvencivel();
-            
-            if(vida.vidas === 0) {
-                somPerdeVida.stop();
-                somJogo.stop();
-                somGameOver.play();
-                image(imagemGameOver, windowWidth/3.5, 330, 650, 113);
-                noLoop();
-            }
         }
 
         if(personagem.estaColidindo(inimigoVoador)) {
             vida.perdeVida();
             personagem.ficaInvencivel();
-            
-            if(vida.vidas === 0) {
-                somPerdeVida.stop();
-                somJogo.stop();
-                somGameOver.play();
-                image(imagemGameOver, windowWidth/3.5, 330, 650, 113);
-                noLoop();
-            }
+        }
+
+        if(vida.vidas <= 0) {
+            somPerdeVida.stop();
+            somJogo.stop();
+            somGameOver.play();
+            image(imagemGameOver, windowWidth / 3.5, 330, 650, 113);
+            noLoop();
         }
 
         if(personagem.estaColidindo(elixir)) {
@@ -95,6 +78,10 @@ class Jogo {
 
     draw() {
 
+        if(vida.vidas <= 0) {
+            return;
+        }
+        
         cenario.exibe();
         pontuacao.exibe();
         vida.draw();
