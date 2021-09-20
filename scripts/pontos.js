@@ -13,8 +13,12 @@ class Pontos extends Animacao {
         this.x -= this.velocidade;
 
         if(this.x < -this.largura - this.delay) {
-            this.x = width;
+            this.reinicializa();
         }
+    }
+
+    reinicializa() {
+        this.x = width;
     }
 }
 
@@ -31,8 +35,8 @@ class Pontuacao {
     }
 
     adicionarPonto() {
-        this.pontos += 0.8;
-        somLamp.play(); 
+        this.pontos += 1;
+        somLamp.play();
         
         if(this.pontos >= 200) {
             somJogo.stop();

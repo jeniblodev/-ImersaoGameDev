@@ -32,36 +32,22 @@ class Jogo {
         } else if(keyIsDown(KEY_D)) {
             personagem.avanca();
         }
-    }
 
-
-    draw() {
-        cenario.exibe();
         cenario.move();
-
-        pontuacao.exibe();
-  
-        vida.draw();
-
-        personagem.exibe();
         personagem.move();
-
-        lampada.exibe();
         lampada.move();
-
-        elixir.exibe();
         elixir.move();
-
-        inimigo.exibe();
         inimigo.move();
-        inimigoTroll.exibe();
         inimigoTroll.move();
-
-        inimigoVoador.exibe();
         inimigoVoador.move();
 
-        cenario.exibeGrama();
+        
+        if(personagem.marcaPonto(lampada)) {
+            pontuacao.adicionarPonto();
+            lampada.reinicializa();
+        }
 
+        
         if(personagem.estaColidindo(inimigo)) {
             vida.perdeVida();
             personagem.ficaInvencivel();
@@ -104,14 +90,23 @@ class Jogo {
         if(personagem.estaColidindo(elixir)) {
             vida.ganhaVida();
             somElixir.play();
-            
         }
 
-        if(personagem.marcaPonto(lampada)) {
-            pontuacao.adicionarPonto();
-        }
+    }
 
-        
+
+    draw() {
+
+        cenario.exibe();
+        pontuacao.exibe();
+        vida.draw();
+        personagem.exibe();
+        lampada.exibe();
+        elixir.exibe();
+        inimigo.exibe();
+        inimigoTroll.exibe();
+        inimigoVoador.exibe();
+        cenario.exibeGrama();
 
     }
 
