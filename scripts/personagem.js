@@ -39,9 +39,12 @@ class Personagem extends Animacao {
 
    volta() {
     this.x -= 5;
+    this.invertida = true;
    }
+
    avanca() {
     this.x += 5;
+    this.invertida = false;
    }
 
    ficaInvencivel() {
