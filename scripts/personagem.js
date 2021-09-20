@@ -33,6 +33,17 @@ class Personagem extends Animacao {
     }
    }
 
+   move() {
+     this.aplicaGravidade();
+   }
+
+   volta() {
+    this.x -= 5;
+   }
+   avanca() {
+    this.x += 5;
+   }
+
    ficaInvencivel() {
       this.invencivel = true
       setTimeout(() => {

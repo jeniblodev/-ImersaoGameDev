@@ -26,6 +26,14 @@ class Jogo {
 
     }
 
+    update() {
+        if(keyIsDown(KEY_A)) {
+            personagem.volta();
+        } else if(keyIsDown(KEY_D)) {
+            personagem.avanca();
+        }
+    }
+
 
     draw() {
         cenario.exibe();
@@ -36,7 +44,7 @@ class Jogo {
         vida.draw();
 
         personagem.exibe();
-        personagem.aplicaGravidade();
+        personagem.move();
 
         lampada.exibe();
         lampada.move();
@@ -100,7 +108,6 @@ class Jogo {
         }
 
         if(personagem.marcaPonto(lampada)) {
-
             pontuacao.adicionarPonto();
         }
 

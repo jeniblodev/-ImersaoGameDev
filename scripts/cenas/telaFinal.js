@@ -13,6 +13,10 @@ class TelaFinal {
         
     }
 
+    update() {
+        
+    }
+
     _imagemFundo() {
         image(imagemTelaInicial, 0, 0, width, height);
     }

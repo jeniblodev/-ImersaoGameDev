@@ -10,10 +10,7 @@ function setup() {
     jogo,
     telaInicial,
     telaFinal
-    
-    
   };
-  
 
 }
 
@@ -22,7 +19,7 @@ function keyPressed() {
 }
 
 function draw() {
+  cenas[cenaAtual].update();
   cenas[cenaAtual].draw();
-  
 }
 
