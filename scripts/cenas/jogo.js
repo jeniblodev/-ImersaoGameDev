@@ -23,7 +23,6 @@ class Jogo {
         if(key === 'x') {
             ligaDesligaSom();
         }
-
     }
 
     update() {
@@ -89,11 +88,10 @@ class Jogo {
 
         if(personagem.estaColidindo(elixir)) {
             vida.ganhaVida();
-            somElixir.play();
+            elixir.reinicializa();
         }
 
     }
-
 
     draw() {
 

@@ -12,13 +12,13 @@ class Pontos extends Animacao {
     move() {
         this.x -= this.velocidade;
 
-        if(this.x < -this.largura - this.delay) {
+        if(this.x < -this.largura) {
             this.reinicializa();
         }
     }
 
     reinicializa() {
-        this.x = width;
+        this.x = width + this.delay;
     }
 }
 
