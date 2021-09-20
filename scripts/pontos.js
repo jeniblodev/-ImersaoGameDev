@@ -9,6 +9,10 @@ class Pontos extends Animacao {
         this.x = width + this.delay;
     }
 
+    colideComInvencivel() {
+        return true;
+    }
+
     move() {
         this.x -= this.velocidade;
 

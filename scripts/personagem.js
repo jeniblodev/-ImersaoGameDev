@@ -70,8 +70,8 @@ class Personagem extends Animacao {
     }, 1000)
   }
 
-   estaColidindo(inimigo) {
-      if(this.invencivel) {
+   estaColidindo(entidade) {
+      if(this.invencivel && !entidade.colideComInvencivel()) {
         return false;
       }
 
@@ -81,34 +81,15 @@ class Personagem extends Animacao {
       this.y, 
       this.largura*precisao, 
       this.altura*precisao,      
-      inimigo.x, 
-      inimigo.y,
-      inimigo.largura*precisao, 
-      inimigo.altura*precisao,      
+      entidade.x, 
+      entidade.y,
+      entidade.largura*precisao, 
+      entidade.altura*precisao,      
     );
 
     return colisao;
     
    }
    
-
-   marcaPonto(pontos) {
-    const precisao = .6;
-    const marcaPonto = collideRectRect(
-      this.x, 
-      this.y, 
-      this.largura*precisao, 
-      this.altura*precisao,      
-      pontos.x, 
-      pontos.y,
-      pontos.largura*precisao, 
-      pontos.altura*precisao,
-      
-    );
-
-    return marcaPonto;
-    
-   }
-  
 }
   
