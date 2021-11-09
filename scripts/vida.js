@@ -19,7 +19,8 @@ class Vida {
         
     }
 
-    ganhaVida() {
+
+    atualizaVida() {
         if(this.vidas < this.total) {
             this.vidas++;
             somElixir.play();
