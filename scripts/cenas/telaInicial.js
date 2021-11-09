@@ -55,7 +55,7 @@ class TelaInicial {
         textFont(fonte);
         textSize(20);
         text('como jogar', windowWidth/9, windowHeight/1.2);
-        text('aperte w para pular', windowWidth/8, windowHeight/1.16);
+        text('aperte w para pular (duas vezes para pulo duplo)', windowWidth/8, windowHeight/1.16);
         text('aperte x para silenciar a musica de fundo', windowWidth/8, windowHeight/1.13);
     }
 
