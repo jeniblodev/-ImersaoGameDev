@@ -13,6 +13,9 @@ class Personagem extends Animacao {
       this.qntPulos = 2;
 
       this.invencivel = false;
+      this.estadoPiscando = 1;
+      this.piscando = false;
+
     }
   
    pula() {
@@ -33,15 +36,43 @@ class Personagem extends Animacao {
     }
    }
 
+   move() {
+     this.aplicaGravidade();
+   }
+
+   volta() {
+    this.x -= 5;
+    this.invertida = true;
+   }
+
+   avanca() {
+    this.x += 5;
+    this.invertida = false;
+   }
+
+   exibe() {
+    if(this.piscando) {
+      this.estadoPiscando += 1;
+      if(this.estadoPiscando >= 3) {
+        this.estadoPiscando = 1;
+        return;
+      }
+    }
+    super.exibe();
+   }
+
    ficaInvencivel() {
-      this.invencivel = true
+      this.invencivel = true;
+      this.piscando = true;
       setTimeout(() => {
-        this.invencivel = false}, 1000)
+        this.invencivel = false;
+        this.piscando = false;
+    }, 1000)
   }
 
-   estaColidindo(inimigo) {
-      if(this.invencivel) {
-        return false
+   estaColidindo(entidade) {
+      if(this.invencivel && !entidade.colideComInvencivel()) {
+        return false;
       }
 
     const precisao = .6;
@@ -50,35 +81,15 @@ class Personagem extends Animacao {
       this.y, 
       this.largura*precisao, 
       this.altura*precisao,      
-      inimigo.x, 
-      inimigo.y,
-      inimigo.largura*precisao, 
-      inimigo.altura*precisao,
-      
+      entidade.x, 
+      entidade.y,
+      entidade.largura*precisao, 
+      entidade.altura*precisao,      
     );
 
     return colisao;
     
    }
    
-
-   marcaPonto(pontos) {
-    const precisao = .6;
-    const marcaPonto = collideRectRect(
-      this.x, 
-      this.y, 
-      this.largura*precisao, 
-      this.altura*precisao,      
-      pontos.x, 
-      pontos.y,
-      pontos.largura*precisao, 
-      pontos.altura*precisao,
-      
-    );
-
-    return marcaPonto;
-    
-   }
-  
 }
   

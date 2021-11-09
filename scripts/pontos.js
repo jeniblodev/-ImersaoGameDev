@@ -9,12 +9,20 @@ class Pontos extends Animacao {
         this.x = width + this.delay;
     }
 
+    colideComInvencivel() {
+        return true;
+    }
+
     move() {
         this.x -= this.velocidade;
 
-        if(this.x < -this.largura - this.delay) {
-            this.x = width;
+        if(this.x < -this.largura) {
+            this.reinicializa();
         }
+    }
+
+    reinicializa() {
+        this.x = width + this.delay;
     }
 }
 
@@ -31,8 +39,8 @@ class Pontuacao {
     }
 
     adicionarPonto() {
-        this.pontos += 0.8;
-        somLamp.play(); 
+        this.pontos += 1;
+        somLamp.play();
         
         if(this.pontos >= 200) {
             somJogo.stop();

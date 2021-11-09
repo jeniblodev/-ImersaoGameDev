@@ -9,18 +9,25 @@ class Animacao {
       this.y = height - this.altura - this.variacaoY;
       this.larguraSprite = larguraSprite;
       this.alturaSprite = alturaSprite;
+      this.invertida = false;
   
       this.frameAtual = 0;
     }
   
     exibe() {
-      image(this.imagem, this.x, this.y, this.largura, this.altura, this.matriz[this.frameAtual][0], this.matriz[this.frameAtual][1], this.larguraSprite, this.alturaSprite);
-  
-      this.anima()
+      push();
+      translate(this.x, this.y);
+      if(this.invertida) {
+        translate(this.largura, 0);
+        scale(-1, 1);
+      }
+      image(this.imagem, 0, 0, this.largura, this.altura, this.matriz[this.frameAtual][0], this.matriz[this.frameAtual][1], this.larguraSprite, this.alturaSprite);
+      pop();
+      this.anima();
     }
   
     anima() {
-      this.frameAtual++
+      this.frameAtual++;
   
       if(this.frameAtual >= this.matriz.length - 1) {
         this.frameAtual = 0;

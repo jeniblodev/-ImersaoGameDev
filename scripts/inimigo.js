@@ -9,6 +9,10 @@ class Inimigo extends Animacao {
         this.x = width + this.delay;
     }
 
+    colideComInvencivel() {
+        return false;
+    }
+
     move() {
         this.x -= this.velocidade;
 

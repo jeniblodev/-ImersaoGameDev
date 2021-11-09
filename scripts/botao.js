@@ -17,5 +17,6 @@ class Botao {
         this.botao.remove();
         cenaAtual = 'jogo'
         somJogo.loop();
+        somAtivo = true;
     }
 }

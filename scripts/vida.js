@@ -21,12 +21,13 @@ class Vida {
 
     ganhaVida() {
         if(this.vidas < this.total) {
-            this.vidas++
+            this.vidas++;
+            somElixir.play();
         }
     }
 
     perdeVida() {
-        this.vidas--
+        this.vidas--;
         somPerdeVida.play();
     }
 }
