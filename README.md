@@ -5,6 +5,8 @@ Hey Devs!
 
 Este projeto foi executado durante as aulas da [#ImersaoGameDev](https://www.alura.com.br/imersao-gamedev-javascript) da Alura. Nesta semana de aulas foram trabalhados conceitos para desenvolver um jogo em JavaScript do zero.
 
+Você pode jogar e se divertir por [aqui](https://jeniblodev.github.io/-ImersaoGameDev). ✨
+
 ## 🖥️ Tecnologias
 
 - JavaScript
